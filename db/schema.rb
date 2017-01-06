@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 201500000000003) do
+ActiveRecord::Schema.define(version: 201500000000005) do
 
   create_table "attractions", force: :cascade do |t|
     t.string  "name"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 201500000000003) do
     t.integer "happiness"
     t.integer "tickets"
     t.integer "height"
-    t.text    "password_digest"
     t.boolean "admin",           default: false
+    t.string  "password_digest"
   end
 
 end

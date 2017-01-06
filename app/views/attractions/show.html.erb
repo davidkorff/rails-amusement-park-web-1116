@@ -1,5 +1,7 @@
 <%= @attraction.name %>
-
+<% if @user.admin %>
+  <%= link_to 'Edit Attraction', attraction_update_path(@attraction) %>
+<% end %>
 <%= form_tag user_path(@user) do %>
 <ul>
 

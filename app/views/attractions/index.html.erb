@@ -1,7 +1,17 @@
-<% @attractions.each do |attraction| %>
-<%= link_to "Go on #{attraction.name}", attraction_path(attraction.id) %>
+
+<% if !@user.admin %>
+  <% @attractions.each do |attraction| %>
+  <%= link_to "Go on #{attraction.name}", attraction_path(attraction.id) %>
+  <% end %>
 <% end %>
 
-<% binding.pry %>
 
-<%= link_to "New Attraction", new_attractions_path %>
+
+
+<% if @user.admin%>
+  <% @attractions.each do |attraction| %>
+  <%= link_to "Show #{attraction.name}", attraction_path(attraction.id) %>
+  <% end %>
+
+  <%= link_to "New Attraction", new_attractions_path %>
+<% end %>
