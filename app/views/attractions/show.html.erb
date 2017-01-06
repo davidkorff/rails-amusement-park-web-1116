@@ -1,0 +1,24 @@
+<%= @attraction.name %>
+
+<%= form_tag user_path(@user) do %>
+<ul>
+
+  <li>
+  <%= label_tag "Your happiness is #{@user.happiness}. This ride will add on #{@attraction.happiness_rating}." %>
+
+  </li>
+  <li>
+  <%= label_tag "Your nausea is #{@user.nausea}. This ride will add on #{@attraction.nausea_rating}." %>
+  </li>
+  <li>
+  <%= label_tag "Your ticket count is #{@user.tickets}. This ride will take #{@attraction.tickets} tickets." %>
+</li>
+
+  <%= text_field_tag "attraction_id", @attraction.id  %>
+
+
+  <%= submit_tag 'Go on this ride'%>
+
+  </ul>
+
+<% end %>
