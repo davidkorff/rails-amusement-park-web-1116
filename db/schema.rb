@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 201500000000005) do
+ActiveRecord::Schema.define(version: 20140703140419) do
 
   create_table "attractions", force: :cascade do |t|
     t.string  "name"
@@ -27,8 +27,6 @@ ActiveRecord::Schema.define(version: 201500000000005) do
     t.integer "nausea_rating"
     t.integer "happiness_rating"
     t.integer "min_height"
-    t.integer "user_id"
-    t.integer "attraction_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,8 +36,6 @@ ActiveRecord::Schema.define(version: 201500000000005) do
     t.integer "happiness"
     t.integer "tickets"
     t.integer "height"
-    t.boolean "admin",           default: false
-    t.string  "password_digest"
   end
 
 end
